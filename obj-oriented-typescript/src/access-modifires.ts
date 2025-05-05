@@ -13,12 +13,12 @@
             this._balance = _balance;
         }
 
-        addDeposit(amount: number){
+        public addDeposit(amount: number){
             this._balance = this._balance + amount
             // console.log(this.balance);
         }
 
-        getBalance(){
+        public getBalance(){
             return this._balance;
         }
     }
