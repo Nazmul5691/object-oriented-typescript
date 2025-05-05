@@ -1,13 +1,10 @@
 {
 
-
     //type guard
 
     //typeof
 
     type Alphanewmeric = number | string;
-
-
 
     // const add = (param1: number | string, param2: number | string): number | string => {
     const add = (param1: Alphanewmeric, param2: Alphanewmeric): Alphanewmeric => {
