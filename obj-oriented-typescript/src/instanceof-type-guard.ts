@@ -32,16 +32,58 @@
             super(name, species)
         }
 
-        makeBarking(){
+        makeMeaw(){
             console.log('i am meaw');
         }
     }
 
-    const dog = new Dog('i am dog', 'dog')
-    const cat = new Dog('i am cat', 'cat')
+    // const getAnimal = (animal : Animal) =>{
+    //     if(animal instanceof Dog){
+    //         animal.makeBarking();
+    //     }
+    //     else if(animal instanceof Cat){
+    //         animal.makeMeaw()
+    //     }
+    //     else{
+    //         animal.makeSound()
+    //     }
+    // }
 
-    dog.makeBarking;
-    cat.makeBarking;
+
+    // use function for smart way
+    // const isDog = (animal : Animal) =>{
+    // const isDog = (animal : Animal): boolean =>{
+    const isDog = (animal : Animal): animal is Dog =>{
+        return animal instanceof Dog;
+    }
+
+    const isCat = (animal : Animal): animal is Cat =>{
+        return animal instanceof Cat;
+    }
+
+    const getAnimal = (animal : Animal) =>{
+        if(isDog(animal)){
+            animal.makeBarking();
+        }
+        else if(isCat(animal)){
+            animal.makeMeaw()
+        }
+        else{
+            animal.makeSound()
+        }
+    }
+
+
+    const dog = new Dog('i am dog', 'dog')
+    const cat = new Cat('i am cat', 'cat')
+
+    // dog.makeBarking;
+    // cat.makeMeaw;
+
+    getAnimal(dog)
+    getAnimal(cat)
+
+
 
 
 
