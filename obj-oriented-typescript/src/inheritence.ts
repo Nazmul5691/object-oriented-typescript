@@ -87,17 +87,12 @@
 
 
 
-    class Teacher {
-        name: string;
-        age: number;
-        address: string;
+    class Teacher extends Person{
         designation: string;
 
 
         constructor(name: string, age:number, address: string, designation: string){
-            this.name = name;
-            this.age = age;
-            this.address = address;
+            super(name, age, address)
             this.designation = designation;
             
         }
